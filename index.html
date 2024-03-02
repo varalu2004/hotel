@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking registration form</title>
+    <link rel="stylesheet" href="hotelpagecss.css">
+    <script src="https://kit.fontawesome.com/d853b8be20.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+      <div class="content flex_space">
+        <div class="logo">
+          <i class="fa-solid fa-face-smile-beam"></i>
+            <h1>THE HAPPY HOTEL</h1>
+      </div>
+      <div class="navlinks">
+       <ul id="menulist">
+       <li><a href="#home">Home</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="rooms.html">Rooms</a></li>
+       <li><a href="#contact">Contact</a></li>
+       <li><button type="button" name="button" class="primary-btn" id="booknow"><a href="reg.html">Book Now</a></button>
+       </li>
+       </ul>
+       <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </header>
+    <script>
+      var menulist=document.getElementById('menulist');
+      menulist.style.maxHeight="0px";
+      function menutoggle(){
+               if(menulist.style.maxHeight=="0px"){
+                menulist.style.maxHeight="100vh";
+
+               }
+               else{
+                menulist.style.maxHeight="0px";
+               }
+      }
+      function open(){
+        windows.open("file:///C:/Users/VARA/Documents/html%20codes/favouritemusicpage/hotelpage/reg.html")
+      }
+    </script>
+    <section  id="home">
+    <div class="content">
+        <img class="image" src="prgo-porche-area-1-scaled (1).jpg" alt="hotel image">
+        <div class="text">
+        <h1>Rest And Relaxation</h1>
+        <h2>Spend Your Holiday Here</h2>
+      </div>
+      </div>
+    </section>  
+    <section id="about" class="about top">
+      <div class="conatiner flex">
+        <div class="left">
+          <div class="cont">
+            <div class="head">
+             <h1>WELCOME TO THE HAPPY HOTEL</h1>
+             
+          <h2>About Us:</h2>
+        </div>
+        <div class="text">
+        <div class="aboutimg left">
+          <img src="328096344.jpg">
+        </div>
+        <div class="info">
+           <p> The Happy Hotel is a unique and exceptional designed luxury hotel that is built into a 60-degree slope in the Ella Gap. Offering breathtaking views we invite you to an unforgettable stay in Ella. We offer luxurious accommodation designed with the utmost comfort and style.
+            This would be an ideal place to spend your holidays during your leisure time. Our luxury hotel in city gives  you a calm and quiet environment that touches your heart with the serenity of human life with real nature at its core. Blessed with an acre of nature, experience the sights and sounds of flora and fauna and have your heart touched with the serenity and luxury that Sri Lanka has to offer.
+          </p>
+          
+        </div>
+        </div>
+          </div>
+      
+        </div>
+        <div class="facilities">
+          <h2>Amenities:</h2>
+          <div class="icons">
+          <i class="fa-solid fa-wifi"></i>
+          <i class="fa-solid fa-hotel"></i>
+        </div>
+        <div class="subtitle">
+          <p>Free Internet Access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On-Site Restaurant</p>
+        </div>
+        <div class="icons">
+          <i class="fa-solid fa-dumbbell"></i>
+          <i class="fa-solid fa-key"></i>
+        </div>
+        <div class="subtitle">
+          <p>&nbsp;&nbsp;Fitness Center&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Digital Key</p>
+        </div>
+        <div class="icons">
+          <i class="fa-regular fa-handshake"></i>
+          <i class="fa-solid fa-bell-concierge"></i>
+        </div>
+        <div class="subtitle">
+          <p>Meeting Facilities&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bell-Concierge</p>
+        </div>
+
+        </div>
+        </div>
+      </div>
+    </section>   
+    <section id="contact" class="contact blink">
+        <h1>Contact Us:</h1>
+        <div class="contactinfo">
+          <p class="ans">No matter where you are in the journey,we'd like to be part of the ahead</p>
+        </div>
+        <div class="details">
+          <div class="location">
+          <i class="fa-solid fa-location-dot"></i>
+          <address>
+            Tirupati Bypass Road,<br>
+            OPP. Srivari Srinidhi,<br>
+            Srinivas Nagar,<br>
+            Andhra  Pradesh,<br>
+            517501
+          </address>
+          <div class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <address>
+            <p><a>thehappyhotel@gmail.com</a></p>
+          </address>
+          </div>
+          <div class="phoneno">
+            <i class="fa-solid fa-phone"></i>
+            <div class="contactno">
+              +91 9034376587<br>
+              +91 7585112545
+            </div>
+            <div class="instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <p>the_happy_hotel@tirupati</p>
+          </div>
+          </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>
