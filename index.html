@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking Website</title>
     <script src="https://kit.fontawesome.com/d853b8be20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <style>
         .logo img{
             margin-top:-40px;
@@ -153,7 +156,19 @@
 </header>
 <section class="home">
     <div class="content">
-        
+        <div class="owl-carousel owl-theme">
+            <div class="item"><img src="suite6.jpg" alt="images"></div>
+        <div class="text">
+            <h1>Rest and Relaxation</h1>
+            <p>
+                Shubham Hotel offers a charming retreat nestled in the heart of the city. With its cozy ambiance and personalized service, guests are treated to a delightful stay amidst modern amenities and warm hospitality.
+            </p>
+            <div class="flex">
+                <button class="primary-btn">Read More..</button>
+                <button class="secondary-btn">Contact Us..</button>
+            </div>
+        </div>
+        </div>
     </div>
 </section>
 <script>
@@ -167,6 +182,25 @@
             menulist.style.maxHeight="0px";
          }
     }
+    </script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
     </script>
 </body>
 </html>
