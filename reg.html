@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hotel Booking Registration Form</title>
+  </head>
+  <body>
+    <style>
+      button{
+        width:35%;
+        background-color:white;
+        color:black;
+        border:none;
+        cursor: pointer;
+        margin-left:250px;
+        margin-top:30px;
+        margin-bottom:20px;
+        height:40px;
+        text-align:center;
+        font-size:20px;
+      }
+      body {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/002/949/867/large_2x/abstract-blur-luxury-hotel-lobby-and-lounge-for-background-free-photo.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        display: grid;
+        place-items:center;
+        align-items:center;
+        justify-content:center;
+      }
+      .main{ 
+        padding:30px;
+      }
+      .heading h1{
+        font-size:60px;
+        text-decoration:underline;
+      }
+      #bookingForm label{
+       font-size:25px;
+        margin-left:30px;
+       margin-top:20px;
+        margin-right:100px;
+        width:240px;
+        display:inline-block;
+        text-align:left;
+        
+      }
+  
+    
+      #bookingForm input{
+            width:450px;
+            height:30px;
+            font-size:20px;
+      }
+      #checkInDate{
+        font-size:20px;
+      }
+      #roomType{
+       width:450px;
+       height:35px;
+        font-size:20px;
+        margin-top:20px;
+      }
+      #amenities{
+        width:250px;
+        margin-top:20px;
+        height:70px;
+        font-size:20px;
+    
+      }
+      .ameniti{
+        display:inline;
+        margin-top:150px;
+      }
+      #totalDays{
+        font-size:20px;
+      }
+      #totalPersons{
+        font-size:15px;
+      }
+     h3{
+        font-size:35px;
+      }
+      .roomrates li{
+        font-size:25px;
+        margin-left:20px;
+      }
+     .btn input[type="button"]{
+        background-color:white;
+        color:black;
+        border:none;
+        cursor: pointer;
+        margin-left:150px;
+        margin-top:30px;
+        margin-bottom:20px;
+        height:40px;
+        text-align:center;
+  
+      }
+      .btn input[type="button"]:hover{
+        background-color:black;
+        color:white;
+        height:60px;
+      }
+      .centered {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height:200x;
+  width:300px;
+  transform: translate(-50%, -50%);
+  background-color:rgba(23,0,0,0.5);
+  color: white;
+  text-align:center;
+  z-index: 1000;
+  padding:60px;
+  font-size:30px;
+}
+    </style>
+    <div class="main">
+    <div class="heading">
+    <h1>Hotel Booking Registration Form</h1>
+  </div>
+    <form id="bookingForm">
+      <h3>Customer Information</h3>
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" required /><br />
+
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" id="checkInDate" required /><br />
+
+      <label for="totalDays">Total No of Days:</label>
+      <input type="number" id="totalDays" min="0" required /><br />
+
+      <label for="totalPersons">Total No of Persons:</label>
+      <input type="number" id="totalPersons" min="0" required /><br />
+       <div class="roomrates">
+        <h3>Room Rates</h3>
+        <ul>
+          <li>Deluxe Room-2500</li>
+          <li>Suite Room-4000/-</li>
+          <li>Ac-1000/-</li>
+          <li>Locker-300/-</li>
+          </ul>
+       </div>
+      <h3>Room Information</h3>
+      <label for="roomType">Room Type:</label>
+      <select id="roomType">
+        <option value="Delux">Delux Room</option>
+        <option value="Suite">Suite Room</option></select
+      ><br />
+
+      <label for="amenities">Amenities:</label>
+      <div class="ameniti">
+      <select id="amenities" multiple>
+        <option value="AC">AC</option>
+        <option value="Locker">Locker</option></select
+      ><br />
+    </div>
+    <label for="extraPersons">Extra Persons:</label>
+    <input type="number" id="extraPersons" /><br />
+      <label for="advanceAmount">Advance Amount:</label>
+      <input type="number" id="advanceAmount" required /><br />
+      <div class="btn">
+        <input type="button" value="Calculate" onclick="calculateCost()" /><br />
+      </div>
+      <label for="balance">Balance:</label>
+      <input type="text" id="balance" readonly /><br />
+
+      <label>Total Room Cost:</label>
+      <input type="text" id="totalRoomCost" readonly /><br />
+
+      <label>Total Amenities Cost:</label>
+      <input type="text" id="totalAmenitiesCost" readonly /><br />
+
+      <label>Total Cost:</label>
+      <input type="text" id="totalCost" readonly /><br />
+      <button type="submit" id="registerButton">Register</button>
+    </form>
+    <div class="centered" id="successMessage">Registration Successful!</div>
+  </div>
+    <script>
+      document.getElementById("registerButton").addEventListener("click", function() {
+  var successMessage = document.getElementById("successMessage");
+  successMessage.style.display = "block";
+  setTimeout(function() {
+    successMessage.style.display = "none";
+  }, 3000); 
+});
+      function calculateCost() {
+        const roomType = document.getElementById("roomType").value;
+        const amenities = document.getElementById("amenities").selectedOptions;
+        const totalDays = parseInt(document.getElementById("totalDays").value);
+        const extraPersons =
+          parseInt(document.getElementById("extraPersons").value) || 0;
+        const advanceAmount = parseInt(
+          document.getElementById("advanceAmount").value
+        );
+        const roomRate = roomType === "Delux" ? 2500 : 4000;
+        const totalRoomCost = roomRate * totalDays;
+        let amenitiesCost = 0;
+        for (let i = 0; i < amenities.length; i++) {
+          if (amenities[i].value === "AC") {
+            amenitiesCost += 1000;
+          } else if (amenities[i].value === "Locker") {
+            amenitiesCost += 300;
+          }
+        }
+        amenitiesCost *= totalDays;
+        const totalCost = totalRoomCost + amenitiesCost + extraPersons * 1000;
+
+        const balance = totalCost - advanceAmount;
+
+        document.getElementById("totalRoomCost").value = totalRoomCost + "/-";
+        document.getElementById("totalAmenitiesCost").value =
+          amenitiesCost + "/-";
+        document.getElementById("totalCost").value = totalCost + "/-";
+        document.getElementById("balance").value = balance + "/-";
+      }
+    </script>
+  </body>
+</html>
